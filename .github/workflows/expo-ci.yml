@@ -29,8 +29,11 @@ jobs:
         with:
           ruby-version: 2.7
 
-      - name: Install Gem
-        run: yarn add global rubygems gem git
+      - name: Clone ruby-build
+        run: git clone https://github.com/rbenv/ruby-build.git
+
+      - name: Install ruby-build
+        run: sudo ./ruby-build/install.sh
 
       - name: Install Fastlane
         run: gem install fastlane
