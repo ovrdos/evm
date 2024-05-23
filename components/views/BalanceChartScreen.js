@@ -11,14 +11,13 @@ import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import Spacer from '@/components/views/Spacer';
-import BalanceChartScreen from '@/components/views/BalanceChartScreen';
 
 import NewsView from '@/components/views/NewsView';
 
 import * as shape from 'd3-shape';
 import { styles } from './../styles/Styles';
 
-export default function HomeScreen() {
+export default function BalanceChartScreen() {
 
   function getDateFromIndex(index) {
       let date = new Date();
@@ -164,17 +163,27 @@ export default function HomeScreen() {
 
   });
 
-    return <SafeAreaView style={styles.container}>
-            <SafeAreaView style={styles.welcomeSection}>
-                <ThemedText style={styles.greeting}  >Welcome Kamal, </ThemedText>
-                <ThemedText style={styles.title}> Portfolio Value </ThemedText>
-                <SafeAreaView>
-                    <ThemedText numberOfLines={1} style={styles.value}>
-                        $96,646,732.00
-                    </ThemedText>
-                </SafeAreaView>
-            </SafeAreaView>
-            <BalanceChartScreen style={styles.spacer} />
-            <NewsView style={{position: 'absolute', top: 200}} />
-            </SafeAreaView>;
+    return <>
+    <TouchableOpacity
+                 style={styles.touchable}
+                 activeOpacity={1}
+                 onPressIn={handlePress}
+                 onPressMove={handlePress}
+
+             >
+             <Svg style={styles.svg} >
+                     <AreaChart
+                         style={styles.chart}
+                         data={sampleData.map((value) => value.y)}
+                         contentInset={{ top: 10, bottom: 30 }}
+                         curve={shape.curveNatural}
+                         svg={{ fill: 'rgba(119, 238, 35, 0.1)', stroke: 'rgba(119, 238, 35, 1)', strokeWidth: 1.5 }}
+                     >
+
+                        <Decorator />
+
+                     </AreaChart>
+                 </Svg>
+             </TouchableOpacity>
+             </>;
   }

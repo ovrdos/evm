@@ -14,11 +14,12 @@ import Spacer from '@/components/views/Spacer';
 import BalanceChartScreen from '@/components/views/BalanceChartScreen';
 
 import NewsView from '@/components/views/NewsView';
+import FOREX from '@/components/views/FOREX';
 
 import * as shape from 'd3-shape';
 import { styles } from './../styles/Styles';
 
-export default function HomeScreen() {
+export default function ForexScreen() {
 
   function getDateFromIndex(index) {
       let date = new Date();
@@ -68,105 +69,65 @@ export default function HomeScreen() {
 
   };
   const styles = StyleSheet.create({
-    container: {
-    flex: 1,
-    width: "100%",
-    height: "40%",
-    alignSelf: 'bottom',
-    alignItems: 'bottom',
-    justifyContent: 'bottom',
-    position: 'absolute',
-    top: '10%',
-    left: 0,
-    },
-    spacer: {
-    flex: 1,
-    width: "100%",
-    height: 40,
-    alignSelf: 'bottom',
-    alignItems: 'bottom',
-    justifyContent: 'bottom',
-    position: 'absolute',
-    top: 189,
-    },
-    welcomeSection: {
-    padding: 20,
-    position: 'absolute',
-    top: 10,
-    right: 0,
-    flexDirection: 'flex-end',
-    },
-    chart: {
-    height: 80,
-    width: "100%",
-    left: 0,
-    alignSelf: 'bottom',
-    justifyContent: 'bottom',
-    },
-    touchable: {
-    height: 80,
-    width: "100%",
-    alignSelf: 'center',
-    alignItems: 'center',
-    justifyContent: 'bottom',
-    position: 'absolute',
-    top: '36%',
-    left: 0,
-    },
-    circle: {
-    position: 'fixed',
-    zIndex: 1,
-    },
-    values: {
-    position: 'absolute',
-    top: 40,
-    left: 4,
-    zIndex: 1,
-    color: 'rgba(56, 4, 4, 1)',
-    fontSize: 12,
-    },
-    daily: {
-    paddingLeft: 10,
-    width: 100,
-    alignItems: 'left',
-    fontSize: 10,
-    fontWeight: 'thin'
-    },
-    greeting: {
-    fontSize: 12,
-    fontWeight: 'thin',
-    fontSize: 18,
-    textAlign: 'right',
-    marginBottom: 5,
-    fontWeight: 'bold',
-    position: 'relative',
-    left: 0,
-    },
-    title: {
-    fontSize: 12,
-    textTransform: 'uppercase',
-    textAlign: 'right',
-    marginBottom: 0
-    },
-    value: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    textAlign: 'right',
-    alignItems: 'flex-end',
-    width: '100%',
-    height: 'auto',
-    },
-    news: {
-    position: 'absolute',
-    top: 300,
-    left: 0,
-    },
-
+container: {
+justifyContent: 'flex-start',
+alignItems: 'flex-start',
+justifyContent: 'top',
+alignItems: 'left',
+width: '100%',
+height: '60%',
+overflow: "scroll",
+backgroundColor: 'rgba(19, 128, 5, 0.0)',
+alignItems: 'center',
+scrollbarWidth: 'none',
+},
+rates: {
+height: '60%',
+alignSelf: 'center',
+overflow: "scroll",
+color: 'black',
+position: 'relative',
+left: 0,
+top: 0,
+padding: 12,
+width: '100%',
+scrollbarWidth: 'none',
+flexDirection: 'flex-end',
+},
+title: {
+alignSelf: 'left',
+justifyContent: 'center',
+fontSize: 17,
+fontWeight: 'bold',
+marginBottom: 3,
+marginLeft: 2,
+width: '100%',
+},
+ratesSummary: {
+alignSelf: 'center',
+justifyContent: 'center',
+color:'black',
+padding: 20,
+fontSize: 18,
+borderRadius: 2,
+borderColor: 'rgba(19, 128, 5, 0.8)',
+backgroundColor: 'rgba(19, 128, 5, 0.1)',
+borderWidth: 2, margin: 11,
+minWidth: '10%',
+flexDirection: 'row',
+},
+chart: {
+height: 80,
+width: "100%",
+top: -100,
+left: 0,
+alignSelf: 'top',
+justifyContent: 'top',
+},
   });
 
     return <SafeAreaView style={styles.container}>
             <SafeAreaView style={styles.welcomeSection}>
-                <ThemedText style={styles.greeting}  >Welcome Kamal, </ThemedText>
                 <ThemedText style={styles.title}> Portfolio Value </ThemedText>
                 <SafeAreaView>
                     <ThemedText numberOfLines={1} style={styles.value}>
@@ -174,7 +135,7 @@ export default function HomeScreen() {
                     </ThemedText>
                 </SafeAreaView>
             </SafeAreaView>
-            <BalanceChartScreen style={styles.spacer} />
-            <NewsView style={{position: 'absolute', top: 200}} />
+            <BalanceChartScreen style={styles.chat} />
+            <FOREX style={{position: 'relative', top: 0}} />
             </SafeAreaView>;
   }
