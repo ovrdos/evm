@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Image, Platform } from 'react-native';
+import { Image, Platform, View } from 'react-native';
 import {LinearGradient} from 'expo-linear-gradient';
 
 import {Svg, Circle, Line, Stop} from 'react-native-svg';
@@ -174,7 +174,9 @@ export default function HomeScreen() {
                     </ThemedText>
                 </SafeAreaView>
             </SafeAreaView>
-            <BalanceChartScreen style={styles.spacer} />
+            <View>
+                <BalanceChartScreen style={styles.spacer} />
+            </View>
             <NewsView style={{position: 'absolute', top: 200}} />
             </SafeAreaView>;
   }

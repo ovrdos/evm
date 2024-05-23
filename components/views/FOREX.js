@@ -52,8 +52,6 @@ export default FOREX = () => {
       .catch(error => console.error(error));
   }, [currencyOrigin]);
 
-  return <ThemedText> FOREX! </ThemedText>;
-};
 function generateUniqueRandomInteger() {
   min=1212;
   max=999999;
@@ -109,3 +107,7 @@ const styles = StyleSheet.create({
       flexDirection: 'row',
       },
 });
+
+return <ThemedText> FORESX! </ThemedText>;
+
+}
