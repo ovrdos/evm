@@ -31,8 +31,6 @@ jobs:
 
       - name: Install Gem
         run: yarn add global rubygems gem git
-        with:
-          ruby-version: 2.7
 
       - name: Install Fastlane
         run: gem install fastlane
