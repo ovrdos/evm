@@ -25,7 +25,7 @@ jobs:
         run: yarn test
 
       - name: Setup Ruby
-        uses: actions/setup-ruby@v1
+        uses: ruby/setup-ruby@v1
         with:
           ruby-version: 2.7
 
@@ -35,7 +35,7 @@ jobs:
       - name: Install Fastlane
         run: gem install fastlane
 
-      - name: Build Expo project
+      - name: Build Expo project - ios
         run: eas build -p ios --non-interactive
         env:
           CI: 1
@@ -45,7 +45,7 @@ jobs:
           FASTLANE_PASSWORD: ${{ secrets.APPLE_APP_SPECIFIC_PASSWORD }}
           FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.APPLE_APP_SPECIFIC_PASSWORD }}
 
-      - name: Build Expo project
+      - name: Build Expo project - android
         run: eas build -p android --non-interactive
         env:
           CI: 1
@@ -54,10 +54,6 @@ jobs:
           FASTLANE_USER: ${{ secrets.APPLE_ID }}
           FASTLANE_PASSWORD: ${{ secrets.APPLE_APP_SPECIFIC_PASSWORD }}
           FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.APPLE_APP_SPECIFIC_PASSWORD }}
-
-
-      - name: Install Fastlane
-        run: gem install fastlane
 
       - name: Authenticate with Apple
         run: fastlane spaceauth -u ${{ secrets.APPLE_ID }}

@@ -13,14 +13,13 @@ import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import Spacer from '@/components/views/Spacer';
 
-import NewsView from '@/components/views/NewsView';
-
 import * as shape from 'd3-shape';
 import { styles } from './../styles/Styles';
 
 export default function BalanceChartScreen() {
 let panResponder = useRef(null).current;
 let panHandlers = useRef(null).current;
+
 
 function getDateFromIndex(index) {
 let date = new Date();

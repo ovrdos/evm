@@ -8,13 +8,14 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "test": "jest --watchAll",
+    "test": "jest --ci --forceExit --detectOpenHandles --bail --json --outputFile=components/__tests__/test-results.json",
     "lint": "expo lint"
   },
   "jest": {
     "preset": "jest-expo"
   },
   "dependencies": {
+    "@babel/preset-typescript": "^7.24.1",
     "@expo/vector-icons": "^14.0.0",
     "@react-native-picker/picker": "^2.7.6",
     "@react-navigation/native": "^6.0.2",
