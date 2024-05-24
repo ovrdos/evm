@@ -34,7 +34,7 @@ jobs:
         run: gem install fastlane --install-dir /tmp/Gems/
 
       - name: Build Expo project - ios
-        run: eas build -p ios --non-interactive
+        run: npx expo build:ios
         env:
           EAS_NO_VCS: 1
           EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
@@ -43,7 +43,7 @@ jobs:
           FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.APPLE_APP_SPECIFIC_PASSWORD }}
 
       - name: Build Expo project - android
-        run: eas build -p android --non-interactive
+        run: npx expo build:android
         env:
           EAS_NO_VCS: 1
           EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
