@@ -34,6 +34,15 @@ export default function CommsScreen() {
     paddingTop: 0,
     fontWeight: 'bold'
   },
+  page: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    textAlign: 'right',
+    alignItems: 'flex-end',
+    width: '100%',
+    height: 'auto',
+    marginTop: 20,
+  },
   });
 
     return <>
@@ -45,6 +54,11 @@ export default function CommsScreen() {
                 <ThemedText numberOfLines={1} style={styles.value}>
                     $96,646,732.00
                 </ThemedText>
+            </SafeAreaView>
+            <SafeAreaView>
+            <ThemedText numberOfLines={1} style={styles.page}>
+                                    Commodity Futures Market
+            </ThemedText>
             </SafeAreaView>
             <BalanceChartScreen />
             </SafeAreaView>

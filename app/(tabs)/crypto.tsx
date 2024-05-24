@@ -33,6 +33,15 @@ export default function CryptoScreen() {
     width: '100%',
     paddingTop: 0,
     fontWeight: 'bold'
+    },
+  page: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    textAlign: 'right',
+    alignItems: 'flex-end',
+    width: '100%',
+    height: 'auto',
+    marginTop: 20,
   },
   });
 
@@ -45,6 +54,11 @@ export default function CryptoScreen() {
                 <ThemedText numberOfLines={1} style={styles.value}>
                     $96,646,732.00
                 </ThemedText>
+            </SafeAreaView>
+            <SafeAreaView>
+            <ThemedText numberOfLines={1} style={styles.page}>
+                                    Cryptocurrency Market
+            </ThemedText>
             </SafeAreaView>
             <BalanceChartScreen />
             </SafeAreaView>
