@@ -32,18 +32,11 @@ jobs:
 
       - name: Install Fastlane
         run: gem install fastlane --install-dir /tmp/Gems/
-
-      - name: Build Expo project - ios
-        run: eas build -p ios
-        env:
-          EAS_NO_VCS: 1
-          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
-          FASTLANE_USER: ${{ secrets.APPLE_ID }}
-          FASTLANE_PASSWORD: ${{ secrets.APPLE_APP_SPECIFIC_PASSWORD }}
-          FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.APPLE_APP_SPECIFIC_PASSWORD }}
-
-      - name: Build Expo project - android
-        run: eas build -p android
+        
+      - name: Expo GitHub Action
+        uses: expo/expo-github-action@8.1.0
+        with:
+          token: ${{ secrets.EXPO_TOKEN }}
         env:
           EAS_NO_VCS: 1
           EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
