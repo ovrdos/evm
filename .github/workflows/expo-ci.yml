@@ -16,7 +16,7 @@ jobs:
           node-version: '20'
 
       - name: Install EAS CLI
-        run: npm install -g expo-cli@latest
+        run: npm install -g @expo/cli@latest
 
       - name: Install dependencies
         run: yarn install 2> >(grep -v warning 1>&2)
@@ -34,7 +34,7 @@ jobs:
         run: gem install fastlane --install-dir /tmp/Gems/
 
       - name: Build Expo project - ios
-        run: expo build:ios
+        run: npx expo build:ios
         env:
           EAS_NO_VCS: 1
           EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
@@ -43,7 +43,7 @@ jobs:
           FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.APPLE_APP_SPECIFIC_PASSWORD }}
 
       - name: Build Expo project - android
-        run: expo build:android
+        run: npx expo build:android
         env:
           EAS_NO_VCS: 1
           EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
