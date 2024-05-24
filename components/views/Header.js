@@ -4,12 +4,10 @@ import Menu from './Menu';
 import Profile from './Profile';
 
 const Header = () => {
-  return (
-    <SafeAreaView style={styles.container} >
-      <Menu style={styles.menu} />
-      <Profile style={styles.profile} />
-    </SafeAreaView>
-  );
+  return <SafeAreaView style={styles.container} >
+            <Menu style={styles.menu} />
+            <Profile style={styles.profile} />
+        </SafeAreaView>;
 };
 
 const styles = StyleSheet.create({
@@ -19,16 +17,17 @@ const styles = StyleSheet.create({
     alignItems: 'top',
     position: "fixed",
     left: 0,
-    top: 40,
+    top: 0,
+    width: "100%",
   },
   profile: {
-    position: 'fixed',
-    top: 20,
+    position: 'absolute',
+    top: 0,
     right: 0
   },
   menu: {
     position: 'fixed',
-    top: 20,
+    top: 0,
     left: 10
   }
 });

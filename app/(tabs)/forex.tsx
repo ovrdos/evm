@@ -24,10 +24,13 @@ export default function ForexScreen() {
   container: {
     width: '100%',
     height: '100%',
-    alignItems: 'center'
+    alignItems: 'center',
+    position: 'relative',
+    top: 70,
   },
   welcomeSection: {
     width: '100%',
+    height: '100%',
     alignItems: 'center',
   },
   title: {

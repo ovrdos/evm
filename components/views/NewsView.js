@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
     alignItems: 'left',
     justifyContent: 'bottom',
     position: 'absolute',
-    top: '75%',
+    top: '90%',
   },
   card: {
     alignItems: 'left',

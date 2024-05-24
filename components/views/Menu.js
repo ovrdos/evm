@@ -4,14 +4,12 @@ import { useNavigation } from '@react-navigation/native';
 
 const Menu = () => {
   const navigation = useNavigation();
-  return (
-    <SafeAreaView style={styles.container}>
+  return <SafeAreaView style={styles.container}>
     <TouchableOpacity onPress={() => navigation.navigate('Menu')}>
-          <Image source={require('./../app/assets/icon_menu.png')}
+          <Image source={require('@/assets/images/icon_menu.png')}
                 style={{ width: 25, height: 25, marginLeft: 10, }} resizeMode="cover" />
     </TouchableOpacity>
-    </SafeAreaView>
-  );
+    </SafeAreaView>;
 };
 
 const styles = StyleSheet.create({
@@ -19,7 +17,6 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
     alignSelf: 'flex-end',
-
   },
 });
 

@@ -108,6 +108,6 @@ const styles = StyleSheet.create({
       },
 });
 
-return <ThemedText> FORESX! </ThemedText>;
+return <ThemedText> FOREX! </ThemedText>;
 
 }

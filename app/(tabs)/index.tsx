@@ -6,7 +6,7 @@ import {Svg, Circle, Line, Stop} from 'react-native-svg';
 import { AreaChart, Decorator } from 'react-native-svg-charts';
 import { TouchableOpacity, SafeAreaView, StyleSheet, Text } from 'react-native';
 import { Menu, MenuOptions, MenuOption, MenuTrigger } from 'react-native-popup-menu';
-
+import Header from '@/components/views/Header';
 import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
@@ -92,7 +92,7 @@ export default function HomeScreen() {
     welcomeSection: {
     padding: 20,
     position: 'absolute',
-    top: 10,
+    top: '10%',
     right: 0,
     flexDirection: 'flex-end',
     },
@@ -100,6 +100,8 @@ export default function HomeScreen() {
     height: 80,
     width: "100%",
     left: 0,
+    bottom: 0,
+    alignItems: 'bottom',
     alignSelf: 'bottom',
     justifyContent: 'bottom',
     },
@@ -165,6 +167,7 @@ export default function HomeScreen() {
   });
 
     return <SafeAreaView style={styles.container}>
+            <Header />
             <SafeAreaView style={styles.welcomeSection}>
                 <ThemedText style={styles.greeting}  >Welcome Kamal, </ThemedText>
                 <ThemedText style={styles.title}> Portfolio Value </ThemedText>

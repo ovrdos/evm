@@ -4,14 +4,12 @@ import { useNavigation } from '@react-navigation/native';
 
 const Profile = () => {
   const navigation = useNavigation();
-  return (
-    <SafeAreaView style={styles.container}>
+  return <SafeAreaView style={styles.container}>
     <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
-          <Image source={require('./../app/assets/icon_profile.png')}
+          <Image source={require('@/assets/images/icon_profile.png')}
                 style={{ width: 25, height: 25 }} resizeMode="cover" />
     </TouchableOpacity>
-    </SafeAreaView>
-  );
+    </SafeAreaView>;
 };
 
 const styles = StyleSheet.create({
