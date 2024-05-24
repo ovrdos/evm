@@ -16,7 +16,7 @@ jobs:
           node-version: '20'
 
       - name: Install EAS CLI
-        run: npm install -g eas-cli@latest
+        run: npm install -g expo-cli@latest
 
       - name: Install dependencies
         run: yarn install 2> >(grep -v warning 1>&2)
