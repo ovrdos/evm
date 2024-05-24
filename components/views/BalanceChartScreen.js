@@ -157,9 +157,9 @@ left: 0,
 spacer: {
 height: 80,
 width: "100%",
-position: 'rel ative',
+position: 'relative',
 left: 0,
-top: 79,
+top: 80,
 alignSelf: 'top',
 justifyContent: 'top',
 }

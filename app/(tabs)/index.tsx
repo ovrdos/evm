@@ -90,10 +90,10 @@ export default function HomeScreen() {
     top: 189,
     },
     welcomeSection: {
-    padding: 20,
+    padding: 0,
     position: 'absolute',
-    top: '10%',
-    right: 0,
+    top: 0,
+    right: 10,
     flexDirection: 'flex-end',
     },
     chart: {
@@ -166,8 +166,7 @@ export default function HomeScreen() {
 
   });
 
-    return <SafeAreaView style={styles.container}>
-            <Header />
+    return <><Header /><SafeAreaView style={styles.container}>
             <SafeAreaView style={styles.welcomeSection}>
                 <ThemedText style={styles.greeting}  >Welcome Kamal, </ThemedText>
                 <ThemedText style={styles.title}> Portfolio Value </ThemedText>
@@ -181,5 +180,5 @@ export default function HomeScreen() {
                 <BalanceChartScreen style={styles.spacer} />
             </View>
             <NewsView style={{position: 'absolute', top: 200}} />
-            </SafeAreaView>;
+            </SafeAreaView></>;
   }

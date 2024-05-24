@@ -16,8 +16,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'top',
     position: "fixed",
-    left: 0,
-    top: 0,
+    left: 10,
+    top: 30,
     width: "100%",
   },
   profile: {
@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
   menu: {
     position: 'fixed',
     top: 0,
-    left: 10
+    left: 20
   }
 });
 
