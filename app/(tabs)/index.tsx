@@ -18,6 +18,25 @@ import NewsView from '@/components/views/NewsView';
 import * as shape from 'd3-shape';
 import { styles } from './../styles/Styles';
 
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+
+
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyDyT7XfMrDcJhdvonl53tC18K9ZFdxmypY",
+  authDomain: "evmt-534b7.firebaseapp.com",
+  projectId: "evmt-534b7",
+  storageBucket: "evmt-534b7.appspot.com",
+  messagingSenderId: "111584159066",
+  appId: "1:111584159066:web:d13e6128bb024e9411ff63",
+  measurementId: "G-32W0HF4FS8"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
 export default function HomeScreen() {
 
   function getDateFromIndex(index) {
